@@ -12,8 +12,8 @@ public class DBManager {
     private Context        _ctx;
     private SQLiteDatabase _db;
 
-    public DBManager(Context c) {
-        _ctx = c;
+    public DBManager(Context ctx) {
+        _ctx = ctx;
     }
 
     public DBManager createNew() throws SQLException {
