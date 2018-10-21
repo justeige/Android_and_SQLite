@@ -16,6 +16,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="nothing to show" />
+        android:text="@string/nothing_to_show" />
 
 </RelativeLayout>

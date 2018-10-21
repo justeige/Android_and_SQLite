@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Enter Name" >
+        android:hint="@string/enter_name">
 
         <requestFocus />
     </EditText>
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Enter Description"
+        android:hint="@string/enter_desc"
         android:inputType="textMultiLine"
         android:minLines="5" >
     </EditText>
@@ -30,6 +30,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add" />
+        android:text="@string/add" />
 
 </LinearLayout>
