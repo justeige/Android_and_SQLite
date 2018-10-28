@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 public class AddRecordActivity extends Activity implements View.OnClickListener {
 
-    private Button _addBtn;
     private EditText _editTextSubj;
     private EditText _editTextDesc;
 
@@ -23,13 +22,12 @@ public class AddRecordActivity extends Activity implements View.OnClickListener 
 
         setContentView(R.layout.activity_add_record);
 
-        _editTextSubj = (EditText) findViewById(R.id.subject_edittext);
-        _editTextDesc = (EditText) findViewById(R.id.description_edittext);
-        _addBtn = (Button) findViewById(R.id.add_record);
+        _editTextSubj = findViewById(R.id.subject_edittext);
+        _editTextDesc = findViewById(R.id.description_edittext);
+        Button addBtn = findViewById(R.id.add_record);
 
-        _dbManager = new DBManager(this);
-        _dbManager.createNew();
-        _addBtn.setOnClickListener(this);
+        _dbManager = DBManager.createAndOpenDB(this);
+        addBtn.setOnClickListener(this);
     }
 
     @Override

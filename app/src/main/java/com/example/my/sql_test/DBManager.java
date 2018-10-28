@@ -12,14 +12,15 @@ public class DBManager {
     private Context        _ctx;
     private SQLiteDatabase _db;
 
-    public DBManager(Context ctx) {
-        _ctx = ctx;
+    static public DBManager createAndOpenDB(Context ctx) throws SQLException {
+        DBManager newManager = new DBManager(ctx);
+        newManager._dbHelper = new DatabaseHelper(newManager._ctx);
+        newManager._db = newManager._dbHelper.getWritableDatabase(); // will open the db connection!
+        return newManager;
     }
 
-    public DBManager createNew() throws SQLException {
-        _dbHelper = new DatabaseHelper(_ctx);
-        _db = _dbHelper.getWritableDatabase(); // will open the db connection!
-        return this;
+    private DBManager(Context ctx) {
+        _ctx = ctx;
     }
 
     public void close() {

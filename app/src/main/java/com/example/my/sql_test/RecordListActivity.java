@@ -28,11 +28,10 @@ public class RecordListActivity extends AppCompatActivity {
 
         setContentView(R.layout.empty_list);
 
-        _dbManager = new DBManager(this);
-        _dbManager.createNew();
+        _dbManager = DBManager.createAndOpenDB(this);
         Cursor cursor = _dbManager.fetch_all();
 
-        _listView = (ListView) findViewById(R.id.list_view);
+        _listView = findViewById(R.id.list_view);
         _listView.setEmptyView(findViewById(R.id.empty));
 
         _adapter = new SimpleCursorAdapter(this, R.layout.activity_view_record, cursor, from, to, 0);
@@ -40,17 +39,16 @@ public class RecordListActivity extends AppCompatActivity {
 
         _listView.setAdapter(_adapter);
 
-        // OnCLickListiner For List Items
         _listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
-                TextView idTextView = (TextView) view.findViewById(R.id.id);
-                TextView titleTextView = (TextView) view.findViewById(R.id.title);
-                TextView descTextView = (TextView) view.findViewById(R.id.desc);
+                TextView idTextView    = view.findViewById(R.id.id);
+                TextView titleTextView = view.findViewById(R.id.title);
+                TextView descTextView  = view.findViewById(R.id.desc);
 
-                String id = idTextView.getText().toString();
+                String id    = idTextView.getText().toString();
                 String title = titleTextView.getText().toString();
-                String desc = descTextView.getText().toString();
+                String desc  = descTextView.getText().toString();
 
                 Intent modify_intent = new Intent(getApplicationContext(), ModifyRecordActivity.class);
                 modify_intent.putExtra("title", title);

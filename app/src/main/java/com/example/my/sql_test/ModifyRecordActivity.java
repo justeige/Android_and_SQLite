@@ -24,14 +24,13 @@ public class ModifyRecordActivity extends Activity implements View.OnClickListen
 
         setContentView(R.layout.activity_modify_record);
 
-        _dbManager = new DBManager(this);
-        _dbManager.createNew();
+        _dbManager = DBManager.createAndOpenDB(this);
 
-        _titleText = (EditText) findViewById(R.id.subject_edittext);
-        _descText = (EditText) findViewById(R.id.description_edittext);
+        _titleText = findViewById(R.id.subject_edittext);
+        _descText  = findViewById(R.id.description_edittext);
 
-        _updateBtn = (Button) findViewById(R.id.btn_update);
-        _deleteBtn = (Button) findViewById(R.id.btn_delete);
+        _updateBtn = findViewById(R.id.btn_update);
+        _deleteBtn = findViewById(R.id.btn_delete);
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
