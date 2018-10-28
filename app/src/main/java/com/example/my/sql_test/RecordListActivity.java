@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-class RecordListActivity extends AppCompatActivity {
+public class RecordListActivity extends AppCompatActivity {
 
     private DBManager           _dbManager;
     private ListView            _listView;

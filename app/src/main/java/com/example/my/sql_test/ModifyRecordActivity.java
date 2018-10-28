@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-class ModifyRecordActivity extends Activity implements View.OnClickListener {
+public class ModifyRecordActivity extends Activity implements View.OnClickListener {
 
     private EditText _titleText;
     private Button   _updateBtn, _deleteBtn;

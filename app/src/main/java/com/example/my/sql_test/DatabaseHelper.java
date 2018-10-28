@@ -8,13 +8,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // db specific data
     public static final String DB_Name = "test_app.db";
-    public static final int DB_Version = 0;
+    public static final int DB_Version = 1;
 
     // data for records
     public static final String RECORD_NAME = "rec";
     public static final String TABLE_NAME = "memo";
     public static final String DESC       = "dec";
-    public static final String ID         = "ID";
+    public static final String ID = "_id";
 
     // init for the db
     private static final String CreateTableCode =
